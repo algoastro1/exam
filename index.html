@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЭкзаменПро - Подготовка к экзаменам</title>
+    <style>
+        /* ===== ОСНОВНЫЕ НАСТРОЙКИ СТРАНИЦЫ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Изменить цвет фона страницы */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ===== ШАПКА САЙТА ===== */
+        header {
+            /* Изменить цвет фона шапки */
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .logo {
+            /* Изменить размер шрифта названия */
+            font-size: 2.5rem;
+            font-weight: bold;
+            /* Изменить цвет названия */
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-emoji {
+            font-size: 2.5rem;
+            margin-right: 10px;
+        }
+
+        /* ===== ГЛАВНЫЙ ЭКРАН (HERO) ===== */
+        .hero {
+            /* Изменить отступы главного блока */
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            /* Изменить размер главного заголовка */
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            /* Изменить размер текста описания */
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        /* ===== БЛОК С КАРТОЧКАМИ ===== */
+        .facts-section {
+            /* Изменить отступы секции с фактами */
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 40px auto;
+            max-width: 1200px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .facts-title {
+            text-align: center;
+            /* Изменить размер заголовка секции */
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            /* Изменить цвет заголовка секции */
+            color: #667eea;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            /* Изменить цвет фона карточки */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .fact-emoji {
+            /* Изменить размер эмодзи в карточках */
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .fact-card h3 {
+            /* Изменить размер заголовка карточки */
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            /* Изменить размер текста карточки */
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* ===== ПОДВАЛ ===== */
+        footer {
+            /* Изменить цвет фона подвала */
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            /* Изменить размер текста подвала */
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* ===== АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ ===== */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .facts-title {
+                font-size: 2rem;
+            }
+
+            .facts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .fact-card {
+                padding: 30px 20px;
+            }
+
+            .fact-emoji {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .facts-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ШАПКА САЙТА -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-emoji">📚</span>
+                ЭкзаменПро
+            </div>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>🎓 Готовься к экзамену легко и эффективно!</h1>
+            <p>Открой для себя лучшие методики подготовки, которые помогут сдать экзамен на отлично без стресса и бессонных ночей.</p>
+        </div>
+    </section>
+
+    <!-- БЛОК С ИНТЕРЕСНЫМИ ФАКТАМИ -->
+    <section class="facts-section">
+        <h2 class="facts-title">✨ Почему это круто?</h2>
+        <div class="facts-grid">
+            <!-- Карточка 1 -->
+            <div class="fact-card">
+                <span class="fact-emoji">🧠</span>
+                <h3>Умные методики</h3>
+                <p>Используй техники интервального повторения и активного вспоминания для лучшего запоминания материала.</p>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="fact-card">
+                <span class="fact-emoji">⏰</span>
+                <h3>Правильное планирование</h3>
+                <p>Составь реалистичный план подготовки и уделяй учебе всего 2-3 часа в день с перерывами.</p>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="fact-card">
+                <span class="fact-emoji">🎯</span>
+                <h3>Четкие цели</h3>
+                <p>Ставь конкретные цели на каждый день и отслеживай свой прогресс для максимальной мотивации.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <p>&copy; 2026 ЭкзаменПро. Все права защищены. Учись с удовольствием! 🚀</p>
+    </footer>
+</body>
+</html>
